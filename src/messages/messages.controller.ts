@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 
 @Controller('messages')
 export class MessagesController {
@@ -11,7 +11,8 @@ export class MessagesController {
   }
 
   @Get()
-  async listMessages() {
+  async listMessages(@Query() query: any) {
+    console.log(query);
     return [
       {
         id: '1',

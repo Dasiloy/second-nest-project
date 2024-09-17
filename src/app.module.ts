@@ -19,5 +19,5 @@ import * as morgan from 'morgan';
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(morgan('tiny')).forRoutes('*');
-  }
+  } // global middleware
 }
